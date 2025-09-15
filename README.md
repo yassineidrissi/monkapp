@@ -4,7 +4,7 @@ This project models an intelligent building heating control system. A lightweigh
 
 ## Vercel deployment
 
-Vercel detects the serverless function placed in the `api/` directory and uses `requirements.txt` to install the Python dependencies. The provided `vercel.json` file pins the runtime to Python 3.11 and redirects requests to the simulation endpoint so visiting the deployment root immediately returns JSON output.
+Vercel detects the serverless function placed in the `api/` directory and uses `requirements.txt` to install the Python dependencies. The provided `vercel.json` file pins the runtime to Python 3.10 and redirects requests to the simulation endpoint so visiting the deployment root immediately returns JSON output.
 
 > **Note:** A legacy `Monkapp` submodule entry has been removed so Vercel no longer attempts to fetch it during builds, eliminating the "Failed to fetch one or more git submodules" warning.
 
