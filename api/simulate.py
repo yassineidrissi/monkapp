@@ -183,6 +183,7 @@ def run_simulation(hours: int, heating_power: float, occupancy_gain: float) -> D
         energy = model.get_energy_consumption(
             heating_power, SECONDS_PER_HOUR
         )
+
         total_energy += energy
 
         timeline.append(
@@ -267,7 +268,6 @@ class handler(BaseHTTPRequestHandler):
     def log_message(self, format: str, *args: Tuple[object, ...]) -> None:  # noqa: A003
         """Silence default request logging to keep serverless logs clean."""
         return
-
 
 if __name__ == "__main__":
     sample = run_simulation(6, 2000, 150)
