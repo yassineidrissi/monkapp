@@ -1,13 +1,15 @@
 {
-  "functions": {
-    "api/**/*.py": {
-      "runtime": "python3.10"
-    }
-  },
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/api/simulate"
-    }
-  ]
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/index.php",
+        "use": "vercel-php@0.6.0"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/api/index.php"
+      }
+    ]
 }
