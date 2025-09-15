@@ -268,8 +268,7 @@ class handler(BaseHTTPRequestHandler):
     def log_message(self, format: str, *args: Tuple[object, ...]) -> None:  # noqa: A003
         """Silence default request logging to keep serverless logs clean."""
         return
- 
+
 if __name__ == "__main__":
     sample = run_simulation(6, 2000, 150)
     print(json.dumps(sample["summary"], indent=2))
-
