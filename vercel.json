@@ -1,15 +1,14 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "api/index.php",
-            "use": "vercel-php@0.6.0"
+    "functions": {
+        "api/**/*.py": {
+            "runtime": "python3.10"
         }
-    ],
+    },
     "rewrites": [
         {
-            "source": "/(.*)",
-            "destination": "/api/index.php"
+            "source": "/",
+            "destination": "/api/simulate"
         }
     ]
 }
