@@ -1,3 +1,4 @@
+
 # Monkapp Thermal Simulation Toolkit
 
 This repository now contains a compact and well documented building thermal
@@ -81,7 +82,7 @@ pytest
 
 Running the test suite validates the thermal model, controller logic and the
 closed-loop simulation interface.
-=======
+
 # monkapp
 
 This project models an intelligent building heating control system. A lightweight API is now exposed so the simulation can be deployed on [Vercel](https://vercel.com/) and queried on demand.
@@ -110,4 +111,8 @@ Query parameters:
 - `heating_power` – constant heating power applied in watts (default 2000)
 - `occupancy_gain` – internal heat gains from occupants/appliances in watts (default 150)
 
-The response includes a `summary` block with aggregated indicators and a `timeline` array describing the indoor, wall, and air temperatures for each simulated hour
+The response includes a `summary` block with aggregated indicators and a `timeline` array describing the indoor, wall, and air temperatures for each simulated hour.
+
+### Local quick test
+
+Run `python api/simulate.py` to execute a six-hour simulation locally. The script now auto-detects whether SciPy and NumPy are available: it uses the detailed `BuildingThermalModel` when the dependencies are installed, otherwise it falls back to a lightweight internal approximation so the endpoint still responds for quick smoke tests.
